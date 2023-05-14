@@ -1,0 +1,146 @@
+:root{
+    --color1: #282c33;
+    --color2: #525960;
+    --textcolor: #fff;
+}
+
+a{
+    text-decoration: none;
+    color: var(--textcolor);
+}
+*{
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.displayFlexMiddleCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.displayFlexMiddle{
+    display: flex;
+    justify-content: center;
+}
+
+.headingTitles{
+    color: var(--textcolor);
+    margin-left: 5vw;
+}
+header{
+    background-color: var(--color1);
+}
+header a {
+}
+header a img{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+}
+.ads{
+    border: 2px dotted;
+    border-radius: 5px;
+    margin: 5px;
+}
+.long-ads{
+    height: 90px;
+    width: 728px;
+}
+.box-adds{
+    height: 255px;
+    width: 305px;
+}
+
+section{
+    background-color: var(--color1);
+    flex-direction: column;
+}
+
+section .wrapper{
+    padding: 0 50px;
+    width: 100%;
+}
+
+section .wrapper .container{flex: 3;}
+section .wrapper .content-holder a{
+    margin: 15px;
+    font-size: smaller;
+}
+section .wrapper .content-holder a img{
+    height: 120px;
+    width: 240px;
+    object-fit: cover;
+}
+section .wrapper .content-holder a span p{
+    /*max-width: 150px;*/
+    max-width: 240px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+section .wrapper .content-holder a span{
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+section .wrapper .content-holder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 25px 0;
+}
+
+section .wrapper .content-holder video{
+    border: 3px solid #ffd700a3;
+    border-radius: 15px;
+    margin-right: 10px;
+}
+
+section .wrapper .Sidebar{
+    justify-content: center;
+    display: flex;
+    flex: 1;
+}
+footer {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #FFF;
+    background-image: linear-gradient(360deg, #ebc45c, var(--color1));
+}
+.hide{
+    display: none;
+}
+
+/*
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+*/
+
+@media (max-width:920px){
+    .long-ads{
+        width: 90%;
+    }
+    header{
+        flex-direction: column;
+    }
+    .wrapper {
+        flex-direction: column;
+    }
+    section .wrapper .content-holder a span p{
+        max-width: 150px;
+    }
+    section .wrapper .content-holder a img{
+        height: 80px;
+        width: 150px;
+    }
+}

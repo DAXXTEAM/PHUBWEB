@@ -33,8 +33,7 @@ a{
 header{
     background-color: var(--color1);
 }
-header a {
-}
+
 header a img{
     height: 80px;
     width: 80px;
@@ -69,8 +68,15 @@ section .wrapper .content-holder a{
     margin: 15px;
     font-size: smaller;
 }
+
+section .wrapper .content-holder a span img:nth-child(3) {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+}
+
 section .wrapper .content-holder a img{
-    height: 120px;
+    height: 160px;
     width: 240px;
     object-fit: cover;
 }
@@ -87,17 +93,103 @@ section .wrapper .content-holder a span{
     align-items: center;
 }
 section .wrapper .content-holder{
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; */
+    padding: 25px 0;
+}
+
+section .wrapper .content-holder .vid{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    padding: 25px 0;
+}
+section .wrapper .content-holder .img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+section .wrapper .content-holder .story{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+section .wrapper .content-holder .article{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
+section .wrapper .content-holder .form-holder{
+    flex-direction: column;
+    color: #fff;
+    width: 100%;
+}
+
+.searchPost{
+    flex-direction: column;
+}
+
+.searchPost *{
+    margin:5px 0;
+    padding: 4px;
+    width: 50%;
+}
+
+section .wrapper .content-holder .form-holder *{
+    margin:5px 0;
+    padding: 4px;
+    width: 50%;
+}
+button{
+    border-radius: 50px;
+    padding: 5px;
+    background-color: darkgoldenrod;
+    color: #fff;
+    font-weight: bolder;
+}
 section .wrapper .content-holder video{
     border: 3px solid #ffd700a3;
     border-radius: 15px;
     margin-right: 10px;
+    width: 100%;
+}
+
+section .wrapper .images-holder{
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+.content-bottom{
+    color: #fff;
+}
+.content-bottom span{
+    padding: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.content-bottom span#data1 a, .content-bottom span#data2 a{
+    padding: 5px 15px;
+    border-radius: 50px;
+    background-color: darkgoldenrod;
+    margin: 0 5px;
+}
+.content-bottom span#data3 a{
+    background-color: grey;
+    padding: 2px 5px;
+    border-radius: 5px;
+    margin: 2px 3px;
+}
+section .wrapper .images-holder img {
+    width: 200px !important;
+    padding: 5px;
+    height: auto !important;
+    border-radius: 10px;
 }
 
 section .wrapper .Sidebar{
@@ -142,5 +234,8 @@ footer {
     section .wrapper .content-holder a img{
         height: 80px;
         width: 150px;
+    }
+    section .wrapper .content-holder .form-holder *{
+        width: 100%;
     }
 }

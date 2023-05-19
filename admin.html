@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdultTime Saga - Admin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="displayFlexMiddleCenter">
+        <div class="wrapper displayFlexMiddle">
+            <div class="container">
+                <h3 class="headingTitles">Update a Post</h3>
+                <div class="searchPost displayFlexMiddleCenter">
+                    <input type="text" name="" id="Search post" placeholder="Enter the Post ID">
+                    <button>Search</button>
+                </div>
+                <h3 class="headingTitles">Make a Post</h3>
+                <div class="content-holder" id="content_holder">
+                    <div class="form-holder displayFlexMiddleCenter">
+                        <label for="">Select Post Type</label>
+                        <select name="PostType" id="PostType">
+                            <option value="">Select</option>
+                            <option value="Video">Video</option>
+                            <option value="Image">Image</option>
+                            <option value="Article">Article</option>
+                            <option value="Story">Story</option>
+                        </select>
+                        <input type="text" name="Post_Title" id="Post_Title" placeholder="Enter Post Title">
+                        <input type="text" name="Post_Thumbnail" id="Post_Thumbnail" placeholder="Enter Thumbnail File Name">
+                        <input type="text" name="Post_Casts" id="Post_Casts" placeholder="Enter Cast seperated using ,">
+                        <input type="text" name="Post_Production" id="Post_Production" placeholder="Enter Production,">
+                        <input type="text" name="Post_Tags" id="Post_Tags" placeholder="Enter Tags seperated with ,">
+                        <input type="text" name="Post_VideoContent" id="Post_VideoContent" placeholder="Enter Video Content (if any)">
+                        <input type="text" name="Post_Imagefolder" id="Post_Imagefolder" placeholder="Enter Image folder (if any)">
+                        <input type="text" name="Post_ImageCount" id="Post_ImageCount" placeholder="Enter Image Count">
+                        <textarea name="Post_Content1" id="Post_Content1" cols="30" rows="5" placeholder="Enter Content 1"></textarea>
+                        <textarea name="Post_Content2" id="Post_Content2" cols="30" rows="5" placeholder="Enter Content 2"></textarea>
+                        <textarea name="Post_Content3" id="Post_Content3" cols="30" rows="5" placeholder="Enter Content 3"></textarea>
+                        <textarea name="Post_Content4" id="Post_Content4" cols="30" rows="5" placeholder="Enter Content 4"></textarea>
+                        <button id="SaveBtn">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <span w3-include-html = "include/footer.html"></span>
+    <script src="FEscript.js"></script>
+    <script src="BEscript.js"></script>
+    <script>
+        const SaveBtnElement = document.querySelector("#SaveBtn");
+        SaveBtnElement.addEventListener("click", () =>{
+            var data01 = document.querySelector("#PostType").value;
+            var data02 = document.querySelector("#Post_Title").value;
+            var data03 = document.querySelector("#Post_Thumbnail").value;
+            var data04 = document.querySelector("#Post_Casts").value;
+            var data05 = document.querySelector("#Post_Production").value;
+            var data06 = document.querySelector("#Post_Tags").value;
+            var data07 = document.querySelector("#Post_VideoContent").value;
+            var data08 = document.querySelector("#Post_Imagefolder").value;
+            var data09 = document.querySelector("#Post_ImageCount").value;
+            var data10 = document.querySelector("#Post_Content1").value;
+            var data11 = document.querySelector("#Post_Content2").value;
+            var data12 = document.querySelector("#Post_Content3").value;
+            var data13 = document.querySelector("#Post_Content4").value;
+
+            console.log(SaveDataAsATSPost(data01, data02, data03, data04, data05, data06, data07, data08, data09, data10, data11, data12, data13));
+        });
+    </script>
+</body>
+</html>

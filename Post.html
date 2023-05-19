@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,18 +8,28 @@
     <title>AdultTime Saga - Home</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <span w3-include-html = "include/header.html"></span>
     <section class="displayFlexMiddleCenter">
         <div class="ads long-ads"></div>
         <div class="wrapper displayFlexMiddle">
             <div class="container">
-                <div class="content-holder" id="content_holder">
-                    <div class="vid"></div>     
-                    <div class="img"></div>     
-                    <div class="story"></div>     
-                    <div class="article"></div>     
+                <h3 class="headingTitles">Some Movie TitleSome Movie TitleSome Movie TitleSome Movie TitleSome Movie TitleSome Movie Title</h3>
+                <div class="content-holder">
+                   
+                    <div class="images-holder displayFlexMiddleCenter">
+                        
+                    </div>
                 </div>
+                <div class="content-bottom">
+                    <span id="data1"><h4>Cast-</h4></span>
+                    <span id="data2"><h4>Production - </h4></span>
+                    <span id="data3">
+                        
+                    </span>
+                </div>
+
             </div>
             <span w3-include-html = "include/sidebar.html"></span>
         </div>
@@ -27,7 +38,11 @@
     <script src="FEscript.js"></script>
     <script src="BEscript.js"></script>
     <script>
-        InitialLoad();
+        
+
+        loadPostData();
     </script>
+
 </body>
+
 </html>

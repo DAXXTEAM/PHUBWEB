@@ -1,14 +1,10 @@
-setInterval(() => {
-    document.querySelector("footer p").innerHTML = Date();
-}, 1000);
-
 //const myDiv = document.querySelector('.box-adds');
 
-document.addEventListener('scroll', function () {
-    console.log(document.querySelector('.box-adds').getBoundingClientRect());
-    //mybutton = document.getElementById("BackToTop");
+// document.addEventListener('scroll', function () {
+//     console.log(document.querySelector('.box-adds').getBoundingClientRect());
+//     //mybutton = document.getElementById("BackToTop");
 
-})
+// })
 
 
 function includeHTML() {
@@ -39,3 +35,7 @@ function includeHTML() {
     }
 }
 includeHTML();
+
+setInterval(() => {
+    document.querySelector("footer p").innerHTML = Date();
+}, 1000);

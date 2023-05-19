@@ -99,7 +99,7 @@ function decidePostType(){
     var allThePostLinks = document.querySelectorAll("section .wrapper .content-holder a");
     allThePostLinks.forEach(AnchorTaglinks => {
         if (AnchorTaglinks.getAttribute("post-type") == "Video") {
-            AnchorTaglinks.children[0].insertAdjacentHTML("beforeend", `<img src="/include/plybutton.png">`)
+            AnchorTaglinks.children[0].insertAdjacentHTML("beforeend", `<img src="include/plybutton.png">`)
         }
     });
 }
@@ -134,17 +134,17 @@ function loadPostData() {
                         document.querySelector(".container .headingTitles").innerText = AllData[i][2];
                         var TempArray = AllData[i][4].split(',');
                         for (j = 0; j < TempArray.length; j++){
-                            document.querySelector("#data1").insertAdjacentHTML("beforeend", `<a href="">${TempArray[j]}</a>`);
+                            document.querySelector("#data1").insertAdjacentHTML("beforeend", `<a href="">${TempArray[j].trim()}</a>`);
                         }
                         
                         TempArray = AllData[i][5].split(',');
                         for (j = 0; j < TempArray.length; j++){
-                            document.querySelector("#data2").insertAdjacentHTML("beforeend", `<a href="">${TempArray[j]}</a>`);
+                            document.querySelector("#data2").insertAdjacentHTML("beforeend", `<a href="">${TempArray[j].trim()}</a>`);
                         }
                         
                         TempArray = AllData[i][6].split(',');
                         for (j = 0; j < TempArray.length; j++){
-                            document.querySelector("#data3").insertAdjacentHTML("beforeend", `<a href="">${TempArray[j]}</a>`);
+                            document.querySelector("#data3").insertAdjacentHTML("beforeend", `<a href="">${TempArray[j].trim()}</a>`);
                         }
 
                         if (AllData[i][7] != "") {
@@ -178,7 +178,7 @@ function SaveDataAsATSPost(data1, data2, data3, data4, data5, data6, data7, data
     fetch(API_URL + `addRowData=true&dt1=${data1}&dt2=${data2}&dt3=${data3}&dt4=${data4}&dt5=${data5}&dt6=${data6}&dt7=${data7}&dt8=${data8}&dt9=${data9}&dt10=${data10}&dt11=${data11}&dt12=${data12}&dt13=${data13}`)
         .then(response => response.json())
         .then(data => {
-            return (data.Data);
+            console.log (data.Data);
         })
 
 }

@@ -1,5 +1,3 @@
-//https://script.google.com/macros/s/AKfycbwue2qjVhBHDvkwIP2i7hmFdBWOJ6h_1Bu61BtQ-4s3NAfQDp94-ugvBnI-Am6Bkbeskg/exec?getFullData=true
-
 var AllData = "";
 var saveButton = document.getElementById("submitBTN");
 var RefreshButton = document.getElementById("ReloadData");
@@ -14,7 +12,7 @@ var VideoCount = 0, imageCount = 0, ArticleCount = 0, StoryCount = 0;
 
 var unpublishedLabel = document.getElementById("lbl_UnPublished");
 
-var API_URL = "https://script.google.com/macros/s/AKfycbwue2qjVhBHDvkwIP2i7hmFdBWOJ6h_1Bu61BtQ-4s3NAfQDp94-ugvBnI-Am6Bkbeskg/exec?";
+var API_URL = "https://script.google.com/macros/s/AKfycbyJTv_bUx45AbLjqhkC0qeqhCRsPOLhn2-eDUAWbuuiaCKXuHegc7h4n82hPwvXInpqtg/exec";
 
 function InitialLoad()
 {
@@ -118,7 +116,7 @@ function loadPostData() {
     var PostImageCount;
     var PostContent;
 
-    fetch(API_URL + `getFullData=true`)
+    fetch(API_URL + `viewPost=${PostIDKey}&code=${PostIDKey}`)
         .then(response => response.json())
         .then(data => {
             try {
@@ -127,58 +125,137 @@ function loadPostData() {
             } catch (error) {
                 AllData = Object.values(data.Data);
                 //console.log(AllData);
-                for (i = 0; i < AllData.length; i++){
-                    if (AllData[i][0] == PostIDKey) {
-                        console.log(AllData[i]);
-                        document.title = AllData[i][2] + " - Adult Time Saga";
-                        document.querySelector(".container .headingTitles").innerText = AllData[i][2];
-                        var TempArray = AllData[i][4].split(',');
-                        for (j = 0; j < TempArray.length; j++){
-                            document.querySelector("#data1").insertAdjacentHTML("beforeend", `<a href="">${TempArray[j].trim()}</a>`);
+                document.title = AllData[2] + " - Adult Time Saga";
+                        document.querySelector(".container .headingTitles").innerText = AllData[2];
+                        var TempArray;
+                        
+                        if (AllData[4] == "")
+                            document.querySelector("#data1").style.display = "none";
+                        else{
+                            TempArray = AllData[4].split(',');
+                            for (j = 0; j < TempArray.length; j++){
+                                document.querySelector("#data1").insertAdjacentHTML("beforeend", `<a href="">${TempArray[j].trim()}</a>`);
+                            }
+                            document.querySelector("#data1").insertAdjacentHTML("afterbegin", `<h4>Cast- </h4>`);
                         }
                         
-                        TempArray = AllData[i][5].split(',');
-                        for (j = 0; j < TempArray.length; j++){
-                            document.querySelector("#data2").insertAdjacentHTML("beforeend", `<a href="">${TempArray[j].trim()}</a>`);
+                        if (AllData[5] == "")
+                            document.querySelector("#data2").style.display = "none";
+                        else {
+                            TempArray = AllData[5].split(',');
+                            for (j = 0; j < TempArray.length; j++){
+                                document.querySelector("#data2").insertAdjacentHTML("beforeend", `<a href="">${TempArray[j].trim()}</a>`);
+                            }
+                            document.querySelector("#data2").insertAdjacentHTML("afterbegin", `<h4>Production - </h4>`);
                         }
                         
-                        TempArray = AllData[i][6].split(',');
-                        for (j = 0; j < TempArray.length; j++){
-                            document.querySelector("#data3").insertAdjacentHTML("beforeend", `<a href="">${TempArray[j].trim()}</a>`);
+                        
+                        if (AllData[6] == "")
+                            document.querySelector("#data3").style.display = "none";
+                        else { 
+                            TempArray = AllData[6].split(',');
+                            for (j = 0; j < TempArray.length; j++){
+                                document.querySelector("#data3").insertAdjacentHTML("beforeend", `<a href="">${TempArray[j].trim()}</a>`);
+                            }
+                            document.querySelector("#data3").insertAdjacentHTML("afterbegin", `<h4>Tags - </h4>`);
                         }
 
-                        if (AllData[i][7] != "") {
-                            document.querySelector(".content-holder").insertAdjacentHTML("afterbegin", `
-                        <video controlsList="nodownload" id="directVid" width="100%" height="auto" controls>
-                            <source src="${AllData[i][7]}" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        `);
+                        if (AllData[7] != "") {
+                            
+                            if (AllData[7].includes("iframe")) {
+                                document.querySelector(".content-holder").insertAdjacentHTML("afterbegin", `<iframe src="${AllData[7].replace("iframe","").trim()}" frameborder="0"></iframe>`);
+                            }
+                            else
+                                document.querySelector(".content-holder").insertAdjacentHTML("afterbegin", `
+                                <video controlsList="nodownload" id="directVid" width="100%" height="auto" controls>
+                                    <source src="${AllData[7]}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                `);
                         }
 
-                        if (AllData[i][8] != "") {
-                            var imageName = AllData[i][8];
-                            var imageCount = AllData[i][9];
+                        if (AllData[8] != "") {
+                            var imageName = AllData[8];
+                            var imageCount = AllData[9];
                             const imageHolderTag = document.querySelector(".images-holder");
                             for (i = 0; i < imageCount; i++) {
-                                imageHolderTag.insertAdjacentHTML("beforeend" , `<a href="CDN/imgs/${imageName} (${(i+1)}).webp"><img src="CDN/imgs/${imageName} (${(i+1)}).webp"></a>`);
+                                imageHolderTag.insertAdjacentHTML("beforeend" , `<a data-fancybox="thumb" href="CDN/imgs/${imageName} (${(i+1)}).webp"><img src="CDN/imgs/${imageName} (${(i+1)}).webp"></a>`);
                             }
                         }
                         
-                        //document.querySelector(".images-holder")
-                        //document.querySelector(".content-holder")
+                if (AllData[10] != "" || AllData[11] != "" || AllData[12] != "" || AllData[13] != "") {
+                    var textDataContent = "";
+                    if (AllData[10] != "")
+                        textDataContent += AllData[10];
+                    if (AllData[11] != "")
+                        textDataContent += "<br/>"+AllData[11];
+                    if (AllData[12] != "")
+                        textDataContent += "<br/>"+AllData[12];
+                    if (AllData[13] != "")
+                        textDataContent += "<br/>"+AllData[13];
+                    
+                    if (textDataContent.includes("<a")) {
+                        textDataContent = textDataContent.replace("<a", "<div style='text-align:center'><a");
+                        textDataContent = textDataContent.replace("</a>", "</div></a>");
                     }
+                    textDataContent = `<div class="text-data">${textDataContent}</div>`;
+                    document.querySelector(".content-holder").insertAdjacentHTML("beforeend", textDataContent)
                 }
             }
         })
 }
 
 function SaveDataAsATSPost(data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12, data13) {
-    
-    fetch(API_URL + `addRowData=true&dt1=${data1}&dt2=${data2}&dt3=${data3}&dt4=${data4}&dt5=${data5}&dt6=${data6}&dt7=${data7}&dt8=${data8}&dt9=${data9}&dt10=${data10}&dt11=${data11}&dt12=${data12}&dt13=${data13}`)
+    var queryString = API_URL + `addRowData=true&dt1=${data1}&dt2=${data2}&dt3=${data3}&dt4=${data4}&dt5=${data5}&dt6=${data6}&dt7=${data7}&dt8=${data8}&dt9=${data9}&dt10=${data10}&dt11=${data11}&dt12=${data12}&dt13=${data13}`;
+    console.log("Save - "+queryString);
+    if (queryString.length < 2000) {
+        fetch(queryString)
+        .then(response => response.json())
+            .then(data => {
+                if(data.Data.includes("Data Inserted Successfully")){
+                    document.querySelector("#PostType").value = "";
+                    document.querySelector("#Post_Title").value = "";
+                    document.querySelector("#Post_Thumbnail").value = "";
+                    document.querySelector("#Post_Casts").value = "";
+                    document.querySelector("#Post_Production").value = "";
+                    document.querySelector("#Post_Tags").value = "";
+                    document.querySelector("#Post_VideoContent").value = "";
+                    document.querySelector("#Post_Imagefolder").value = "";
+                    document.querySelector("#Post_ImageCount").value = "";
+                    document.querySelector("#Post_Content1").value = "";
+                    document.querySelector("#Post_Content2").value = "";
+                    document.querySelector("#Post_Content3").value = "";
+                    document.querySelector("#Post_Content4").value = "";
+                }
+                alert(data.Data);
+        })    
+    }
+
+    //<a target='_blank' href='https://www.locoloader.com/?url=https%3A%2F%2Fspankbang.com%2F81nyt%2Fvideo%2F'>Click here to Download</a>
+}
+
+function UpdateDataAsATSPost(code, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12, data13) {
+    var queryString = API_URL + `updateRowData=${code}&dt1=${data1}&dt2=${data2}&dt3=${data3}&dt4=${data4}&dt5=${data5}&dt6=${data6}&dt7=${data7}&dt8=${data8}&dt9=${data9}&dt10=${data10}&dt11=${data11}&dt12=${data12}&dt13=${data13}`;
+    console.log("Update - "+queryString);
+    if (queryString.length < 2000) {
+        fetch(queryString)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.Data);
+            })
+    }
+    else
+        alert("Query String is way too long. - " + queryString.length);
+}
+
+function GetPostData(PostCode) {
+    fetch(API_URL + `getRowData=true&code=${PostCode}`)
         .then(response => response.json())
         .then(data => {
-            console.log (data.Data);
+            if (data.Data.length != 13) {
+                PostData = data.Data;
+                document.querySelector(".DBButtons").style.display = "flex";
+            }
         })
-
 }
+

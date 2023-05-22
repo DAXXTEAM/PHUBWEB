@@ -6,15 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AdultTime Saga - Admin</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <section class="displayFlexMiddleCenter">
         <div class="wrapper displayFlexMiddle">
             <div class="container">
-                <h3 class="headingTitles">Update a Post</h3>
+                <h3 id="SearchRemover" class="headingTitles">Update a Post</h3>
                 <div class="searchPost displayFlexMiddleCenter">
-                    <input type="text" name="" id="Search post" placeholder="Enter the Post ID">
-                    <button>Search</button>
+                    <input type="text" name="" id="SearchpostID" placeholder="Enter the Post ID">
+                    <button id="searchBtn">Search</button>
+                    <div class="DBButtons">
+                        <span id="Editbtn" class="fas fa-edit">Edit</span>
+                        <span id="Delbtn" class="fas fa-trash">Delete</span>
+                    </div>
                 </div>
                 <h3 class="headingTitles">Make a Post</h3>
                 <div class="content-holder" id="content_holder">
@@ -50,6 +55,57 @@
     <script src="BEscript.js"></script>
     <script>
         const SaveBtnElement = document.querySelector("#SaveBtn");
+        const searchBtnElement = document.querySelector("#searchBtn");
+        const EditBtnElement = document.querySelector("#Editbtn");
+        const DeleteBtnElement = document.querySelector("#Delbtn");
+        
+        var ResponseData;
+        var PostData;
+        var selectedPostID;
+        function deletePost(PostCode) {
+            //console.log(`https://script.google.com/macros/s/AKfycbzLYt7E7lHW5yJl8kYl-86IEyqFfXG93mY1DVn-cdn4Vt4QL4GPgqFvDV_cxnxCVMo_ZA/exec?deleteRowData=${PostCode}`);
+            fetch(`https://script.google.com/macros/s/AKfycbzLYt7E7lHW5yJl8kYl-86IEyqFfXG93mY1DVn-cdn4Vt4QL4GPgqFvDV_cxnxCVMo_ZA/exec?deleteRowData=${PostCode}`)
+                .then(response => response.json())
+                .then(data => {
+                    GlobalVar = data.Data;
+                    console.log(data.Data);
+                    document.querySelector(".DBButtons").style.display = "none";
+                    return;
+                });
+        }
+
+        EditBtnElement.addEventListener("click", ()=>{
+            //console.log(PostData);
+            selectedPostID = PostData[0];
+            document.querySelector("#PostType").value = PostData[1];
+            document.querySelector("#Post_Title").value = PostData[2];
+            document.querySelector("#Post_Thumbnail").value = PostData[3];
+            document.querySelector("#Post_Casts").value = PostData[4];
+            document.querySelector("#Post_Production").value = PostData[5];
+            document.querySelector("#Post_Tags").value = PostData[6];
+            document.querySelector("#Post_VideoContent").value = PostData[7];
+            document.querySelector("#Post_Imagefolder").value = PostData[8];
+            document.querySelector("#Post_ImageCount").value = PostData[9];
+            document.querySelector("#Post_Content1").value = PostData[10];
+            document.querySelector("#Post_Content2").value = PostData[11];
+            document.querySelector("#Post_Content3").value = PostData[12];
+            document.querySelector("#Post_Content4").value = PostData[13];
+            SaveBtnElement.innerText = "Update";
+        });
+        DeleteBtnElement.addEventListener("click", ()=>{
+
+            deletePost(document.querySelector("#SearchpostID").value);
+        });
+        SearchRemover.addEventListener("click",()=>{
+            document.querySelector("#SearchpostID").value = "";
+        })
+        searchBtnElement.addEventListener("click", () =>{
+            if(document.querySelector("#SearchpostID").value != ""){
+                console.log("Searching Started");
+                PostData = null;
+                GetPostData(document.querySelector("#SearchpostID").value);
+            }
+        });
         SaveBtnElement.addEventListener("click", () =>{
             var data01 = document.querySelector("#PostType").value;
             var data02 = document.querySelector("#Post_Title").value;
@@ -64,8 +120,15 @@
             var data11 = document.querySelector("#Post_Content2").value;
             var data12 = document.querySelector("#Post_Content3").value;
             var data13 = document.querySelector("#Post_Content4").value;
-
-            SaveDataAsATSPost(data01, data02, data03, data04, data05, data06, data07, data08, data09, data10, data11, data12, data13);
+            if(SaveBtnElement.innerText != "Update")
+            {
+                SaveDataAsATSPost(data01, data02, data03, data04, data05, data06, data07, data08, data09, data10, data11, data12, data13);
+                
+            }
+                
+            else{
+                UpdateDataAsATSPost(selectedPostID, data01, data02, data03, data04, data05, data06, data07, data08, data09, data10, data11, data12, data13);
+            }
         });
     </script>
 </body>

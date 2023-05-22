@@ -29,6 +29,7 @@ a{
 .headingTitles{
     color: var(--textcolor);
     margin-left: 5vw;
+    margin-top: 5vh;
 }
 header{
     background-color: var(--color1);
@@ -98,6 +99,18 @@ section .wrapper .content-holder{
     align-items: center;
     flex-wrap: wrap; */
     padding: 25px 0;
+    color: #fff;
+}
+section .wrapper .content-holder .text-data p{
+    margin-bottom: 15px;
+}
+section .wrapper .content-holder .text-data a{
+    border-radius: 50px;
+    border: 2px solid #fff;
+    padding: 5px 10px;
+    margin: 10px 0;
+    display: inline-block;
+    background-color: darkred;
 }
 
 section .wrapper .content-holder .vid{
@@ -133,12 +146,33 @@ section .wrapper .content-holder .form-holder{
 
 .searchPost{
     flex-direction: column;
+    color: #fff;
 }
 
 .searchPost *{
     margin:5px 0;
     padding: 4px;
     width: 50%;
+}
+.searchPost .DBButtons {
+    display: none;
+    justify-content: space-evenly;
+}
+.searchPost .DBButtons .fas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 25px;
+    cursor: pointer;
+    border: 1px solid;
+    border-radius: 5px;
+    width: 55px;
+    background-image: linear-gradient(45deg, gold, black);
+}
+.searchPost .DBButtons .fas:hover{
+    background-image: linear-gradient(45deg, black, gold);
+    box-shadow: 0 0 18px 4px black;
 }
 
 section .wrapper .content-holder .form-holder *{
@@ -177,7 +211,7 @@ section .wrapper .images-holder{
     padding: 5px 15px;
     border-radius: 50px;
     background-color: darkgoldenrod;
-    margin: 0 5px;
+    margin: 2px 5px;
 }
 .content-bottom span#data3 a{
     background-color: grey;
@@ -186,7 +220,7 @@ section .wrapper .images-holder{
     margin: 2px 3px;
 }
 section .wrapper .images-holder img {
-    width: 200px !important;
+    width: 180px !important;
     padding: 5px;
     height: auto !important;
     border-radius: 10px;
@@ -227,6 +261,9 @@ footer {
     }
     .wrapper {
         flex-direction: column;
+    }
+    section .wrapper{
+        padding: 0 25px;
     }
     section .wrapper .content-holder a span p{
         max-width: 150px;

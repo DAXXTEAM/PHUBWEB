@@ -80,6 +80,7 @@ section .wrapper .content-holder a img{
     height: 160px;
     width: 240px;
     object-fit: cover;
+    object-position: top;
 }
 section .wrapper .content-holder a span p{
     /*max-width: 150px;*/

@@ -190,6 +190,7 @@ button{
 }
 section .wrapper .content-holder iframe{
     width:100%;
+    height:480px;
 }
 section .wrapper .content-holder video{
     border: 3px solid #ffd700a3;

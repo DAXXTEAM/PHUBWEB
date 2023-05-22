@@ -12,7 +12,7 @@ var VideoCount = 0, imageCount = 0, ArticleCount = 0, StoryCount = 0;
 
 var unpublishedLabel = document.getElementById("lbl_UnPublished");
 
-var API_URL = "https://script.google.com/macros/s/AKfycbyJTv_bUx45AbLjqhkC0qeqhCRsPOLhn2-eDUAWbuuiaCKXuHegc7h4n82hPwvXInpqtg/exec";
+var API_URL = "https://script.google.com/macros/s/AKfycbyJTv_bUx45AbLjqhkC0qeqhCRsPOLhn2-eDUAWbuuiaCKXuHegc7h4n82hPwvXInpqtg/exec?";
 
 function InitialLoad()
 {

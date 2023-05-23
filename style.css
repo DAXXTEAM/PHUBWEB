@@ -273,9 +273,12 @@ footer {
     section .wrapper .content-holder a span p{
         max-width: 150px;
     }
+    section .wrapper .content-holder a{
+        margin: 5px;
+    }
     section .wrapper .content-holder a img{
-        height: 80px;
-        width: 150px;
+        height: 120px;
+        width: 200px;
     }
     section .wrapper .content-holder .form-holder *{
         width: 100%;

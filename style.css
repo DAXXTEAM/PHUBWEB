@@ -275,10 +275,12 @@ footer {
     }
     section .wrapper .content-holder a{
         margin: 5px;
+        display:block;
+        width:50%
     }
     section .wrapper .content-holder a img{
         height: 120px;
-        width: 180px;
+        width: 100%;
     }
     section .wrapper .content-holder .form-holder *{
         width: 100%;

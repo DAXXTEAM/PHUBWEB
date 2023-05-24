@@ -47,12 +47,12 @@ header a img{
     margin: 5px;
 }
 .long-ads{
-    height: 90px;
-    width: 728px;
+    height: 100px;
+    width: 740px;
 }
 .box-adds{
-    height: 255px;
-    width: 305px;
+    height: 260px;
+    width: 310px;
 }
 
 section{
@@ -114,29 +114,12 @@ section .wrapper .content-holder .text-data a{
     background-color: darkred;
 }
 
-section .wrapper .content-holder .vid{
+section .wrapper .content-holder .vid, section .wrapper .content-holder .img, section .wrapper .content-holder .img, section .wrapper .content-holder .story, section .wrapper .content-holder .article{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-}
-section .wrapper .content-holder .img{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
-section .wrapper .content-holder .story{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
-section .wrapper .content-holder .article{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    width:100%;
 }
 
 section .wrapper .content-holder .form-holder{

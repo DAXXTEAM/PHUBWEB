@@ -1,1 +1,286 @@
-function _0x1d30(_0x23c455,_0x5ad84b){var _0x33bc84=_0x33bc();return _0x1d30=function(_0x1d3017,_0x4d8f39){_0x1d3017=_0x1d3017-0xb3;var _0x587973=_0x33bc84[_0x1d3017];return _0x587973;},_0x1d30(_0x23c455,_0x5ad84b);}var _0x2f98a2=_0x1d30;(function(_0x34c1a4,_0x30cf52){var _0x28e30a=_0x1d30,_0x380b18=_0x34c1a4();while(!![]){try{var _0x89c51b=-parseInt(_0x28e30a(0x121))/0x1+parseInt(_0x28e30a(0xb6))/0x2+parseInt(_0x28e30a(0xbd))/0x3*(-parseInt(_0x28e30a(0xf8))/0x4)+parseInt(_0x28e30a(0x10c))/0x5*(parseInt(_0x28e30a(0xd8))/0x6)+parseInt(_0x28e30a(0xcf))/0x7*(parseInt(_0x28e30a(0xf6))/0x8)+-parseInt(_0x28e30a(0xca))/0x9+parseInt(_0x28e30a(0xfa))/0xa;if(_0x89c51b===_0x30cf52)break;else _0x380b18['push'](_0x380b18['shift']());}catch(_0x41752e){_0x380b18['push'](_0x380b18['shift']());}}}(_0x33bc,0x48ae7));var AllData='',saveButton=document[_0x2f98a2(0x107)](_0x2f98a2(0xda)),RefreshButton=document[_0x2f98a2(0x107)](_0x2f98a2(0xe8)),SearchTxtBox=document[_0x2f98a2(0x107)](_0x2f98a2(0xb5)),CheckModel,CrossModel,ModelNamesListSpan,SelectedModelID='',CopyModelName,IndexPgHeading,LongAds,Ads300x250,VideoCount=0x0,imageCount=0x0,ArticleCount=0x0,StoryCount=0x0,unpublishedLabel=document['getElementById'](_0x2f98a2(0xb8)),API_URL=_0x2f98a2(0xd9);function InitialLoad(){var _0x249009=_0x2f98a2;fetch(API_URL+'getFullData=true')[_0x249009(0xc5)](_0xb26cac=>_0xb26cac['json']())[_0x249009(0xc5)](_0x32f241=>{var _0x2bacc9=_0x249009;try{if(_0x32f241[_0x2bacc9(0xd2)]['toLowerCase']()==_0x2bacc9(0xf9)[_0x2bacc9(0xc3)]()){}}catch(_0x458520){AllData=Object['values'](_0x32f241['Data']),console[_0x2bacc9(0x11a)](AllData);}LoadData();});}function LoadData(){var _0x305ab8=_0x2f98a2,_0x2828ba=document[_0x305ab8(0x106)](_0x305ab8(0x123)),_0x211a1f=document[_0x305ab8(0x106)](_0x305ab8(0xcd)),_0x14a05e=document[_0x305ab8(0x106)](_0x305ab8(0xc9)),_0x1599de=document[_0x305ab8(0x106)](_0x305ab8(0xc2));if(AllData[_0x305ab8(0xbf)]>0x0){for(i=0x0;i<AllData[_0x305ab8(0xbf)];i++){var _0x52f7b2='';_0x52f7b2='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20post-type=\x22'+AllData[i][0x1]+'\x22\x20href=\x22Post.html?viewkey='+AllData[i][0x0]+_0x305ab8(0xdc);if(AllData[i][0x3]['includes'](_0x305ab8(0xdb)))_0x52f7b2+=_0x305ab8(0xf4)+AllData[i][0x3]+'\x22>';else _0x52f7b2+=_0x305ab8(0xc0)+AllData[i][0x3]+_0x305ab8(0xe3);_0x52f7b2+='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p>'+AllData[i][0x2]+_0x305ab8(0xdf),AllData[i][0x1]==_0x305ab8(0xb9)&&(VideoCount++,_0x2828ba['insertAdjacentHTML'](_0x305ab8(0x10b),_0x52f7b2)),AllData[i][0x1]=='Image'&&(imageCount++,_0x211a1f[_0x305ab8(0xd1)]('beforeend',_0x52f7b2)),AllData[i][0x1]==_0x305ab8(0xe5)&&(ArticleCount++,_0x1599de['insertAdjacentHTML'](_0x305ab8(0x10b),_0x52f7b2)),AllData[i][0x1]=='Story'&&(StoryCount++,_0x14a05e[_0x305ab8(0xd1)](_0x305ab8(0x10b),_0x52f7b2));}if(VideoCount>0x0)_0x2828ba['insertAdjacentHTML'](_0x305ab8(0x118),_0x305ab8(0xf3));if(imageCount>0x0)_0x211a1f[_0x305ab8(0xd1)]('beforebegin',_0x305ab8(0xf1));if(ArticleCount>0x0)_0x1599de[_0x305ab8(0xd1)]('beforebegin',_0x305ab8(0x113));if(StoryCount>0x0)_0x14a05e[_0x305ab8(0xd1)](_0x305ab8(0x118),_0x305ab8(0x108));decidePostType(),IndexPgHeading=document['querySelectorAll']('.headingTitles'),Ads300x250=document[_0x305ab8(0x101)]('.box-adds'),LoadAds();}}function decidePostType(){var _0x52eb14=_0x2f98a2,_0xca5e96=document[_0x52eb14(0x101)]('section\x20.wrapper\x20.content-holder\x20a');_0xca5e96[_0x52eb14(0xbe)](_0x11c125=>{var _0x3e4ee8=_0x52eb14;_0x11c125[_0x3e4ee8(0x111)](_0x3e4ee8(0xd5))==_0x3e4ee8(0xb9)&&_0x11c125[_0x3e4ee8(0xd6)][0x0][_0x3e4ee8(0xd1)](_0x3e4ee8(0x10b),_0x3e4ee8(0x10f));});}function loadPostData(){var _0x10408f=_0x2f98a2;const _0x47cad4=window[_0x10408f(0xe6)][_0x10408f(0xed)],_0x42f565=new URLSearchParams(_0x47cad4),_0x147ad8=_0x42f565[_0x10408f(0xfd)]('viewkey');var _0x4caed9,_0x2bf4b1,_0x5c0989,_0x54173f,_0x1d6192,_0x219593,_0x1c53a2,_0x4422ef;fetch(API_URL+(_0x10408f(0xfe)+_0x147ad8+'&code='+_0x147ad8))['then'](_0x2b1519=>_0x2b1519[_0x10408f(0xc4)]())['then'](_0x5626b4=>{var _0x25c434=_0x10408f;try{if(_0x5626b4['Data'][_0x25c434(0xc3)]()==_0x25c434(0xf9)['toLowerCase']()){}}catch(_0x55e240){AllData=Object['values'](_0x5626b4[_0x25c434(0xd2)]),document[_0x25c434(0xfb)]=AllData[0x2]+'\x20-\x20Adult\x20Time\x20Saga',document[_0x25c434(0x106)]('.container\x20.headingTitles')[_0x25c434(0xbb)]=AllData[0x2];var _0x4c724e;if(AllData[0x4]=='')document[_0x25c434(0x106)]('#data1')[_0x25c434(0x10d)][_0x25c434(0x11e)]='none';else{_0x4c724e=AllData[0x4][_0x25c434(0x112)](',');for(j=0x0;j<_0x4c724e['length'];j++){document[_0x25c434(0x106)]('#data1')[_0x25c434(0xd1)](_0x25c434(0x10b),_0x25c434(0xff)+_0x4c724e[j][_0x25c434(0x110)]()+_0x25c434(0xcc));}document['querySelector'](_0x25c434(0xeb))[_0x25c434(0xd1)](_0x25c434(0xdd),_0x25c434(0xce));}if(AllData[0x5]=='')document[_0x25c434(0x106)]('#data2')[_0x25c434(0x10d)]['display']=_0x25c434(0x122);else{_0x4c724e=AllData[0x5][_0x25c434(0x112)](',');for(j=0x0;j<_0x4c724e[_0x25c434(0xbf)];j++){document[_0x25c434(0x106)](_0x25c434(0x102))[_0x25c434(0xd1)](_0x25c434(0x10b),_0x25c434(0xff)+_0x4c724e[j]['trim']()+_0x25c434(0xcc));}document['querySelector']('#data2')[_0x25c434(0xd1)]('afterbegin','<h4>Production\x20-\x20</h4>');}if(AllData[0x6]=='')document[_0x25c434(0x106)](_0x25c434(0x11b))[_0x25c434(0x10d)][_0x25c434(0x11e)]=_0x25c434(0x122);else{_0x4c724e=AllData[0x6][_0x25c434(0x112)](',');for(j=0x0;j<_0x4c724e['length'];j++){document[_0x25c434(0x106)](_0x25c434(0x11b))['insertAdjacentHTML'](_0x25c434(0x10b),_0x25c434(0xff)+_0x4c724e[j]['trim']()+'</a>');}document[_0x25c434(0x106)]('#data3')['insertAdjacentHTML'](_0x25c434(0xdd),_0x25c434(0x11c));}if(AllData[0x7]!=''){if(AllData[0x7][_0x25c434(0xe0)](_0x25c434(0xb7)))document[_0x25c434(0x106)](_0x25c434(0x10a))[_0x25c434(0xd1)]('afterbegin',_0x25c434(0xd7)+AllData[0x7]['replace']('iframe','')[_0x25c434(0x110)]()+'\x22\x20frameborder=\x220\x22></iframe>');else document[_0x25c434(0x106)]('.content-holder')['insertAdjacentHTML'](_0x25c434(0xdd),_0x25c434(0xfc)+AllData[0x7]+_0x25c434(0xc7));}if(AllData[0x8]!=''){var _0x3e73aa=AllData[0x8],_0x348021=AllData[0x9];const _0x319997=document['querySelector'](_0x25c434(0xe2));for(i=0x0;i<_0x348021;i++){_0x319997[_0x25c434(0xd1)]('beforeend','<a\x20data-fancybox=\x22thumb\x22\x20href=\x22CDN/imgs/'+_0x3e73aa+'\x20('+(i+0x1)+_0x25c434(0xd4)+_0x3e73aa+'\x20('+(i+0x1)+_0x25c434(0xb4));}}if(AllData[0xa]!=''||AllData[0xb]!=''||AllData[0xc]!=''||AllData[0xd]!=''){var _0x3ce747='';if(AllData[0xa]!='')_0x3ce747+=AllData[0xa];if(AllData[0xb]!='')_0x3ce747+=_0x25c434(0x116)+AllData[0xb];if(AllData[0xc]!='')_0x3ce747+=_0x25c434(0x116)+AllData[0xc];if(AllData[0xd]!='')_0x3ce747+=_0x25c434(0x116)+AllData[0xd];_0x3ce747[_0x25c434(0xe0)]('<a')&&(_0x3ce747=_0x3ce747[_0x25c434(0xc8)]('<a',_0x25c434(0xe4)),_0x3ce747=_0x3ce747[_0x25c434(0xc8)]('</a>','</div></a>')),_0x3ce747=_0x25c434(0xd3)+_0x3ce747+'</div>',document[_0x25c434(0x106)](_0x25c434(0x10a))[_0x25c434(0xd1)](_0x25c434(0x10b),_0x3ce747);}}});}function SaveDataAsATSPost(_0x22a7d6,_0x19e2bb,_0x15d08d,_0x4a4360,_0x6f3cb0,_0x364069,_0x2f3f2c,_0x780f1c,_0x3de0bc,_0x1d1b22,_0x52323b,_0x555bb9,_0xc7ea0c){var _0x5c601c=_0x2f98a2,_0x662161=API_URL+(_0x5c601c(0xe9)+_0x22a7d6+_0x5c601c(0xba)+_0x19e2bb+_0x5c601c(0xc6)+_0x15d08d+_0x5c601c(0x100)+_0x4a4360+_0x5c601c(0xea)+_0x6f3cb0+_0x5c601c(0xe7)+_0x364069+_0x5c601c(0x119)+_0x2f3f2c+'&dt8='+_0x780f1c+_0x5c601c(0x105)+_0x3de0bc+_0x5c601c(0xec)+_0x1d1b22+_0x5c601c(0xcb)+_0x52323b+'&dt12='+_0x555bb9+'&dt13='+_0xc7ea0c);console[_0x5c601c(0x11a)](_0x5c601c(0x11d)+_0x662161),_0x662161[_0x5c601c(0xbf)]<0x7d0&&fetch(_0x662161)[_0x5c601c(0xc5)](_0x55439a=>_0x55439a['json']())[_0x5c601c(0xc5)](_0x47ab00=>{var _0x47008a=_0x5c601c;_0x47ab00[_0x47008a(0xd2)][_0x47008a(0xe0)](_0x47008a(0x115))&&(document[_0x47008a(0x106)](_0x47008a(0xde))[_0x47008a(0x114)]='',document[_0x47008a(0x106)](_0x47008a(0x11f))[_0x47008a(0x114)]='',document[_0x47008a(0x106)]('#Post_Thumbnail')[_0x47008a(0x114)]='',document[_0x47008a(0x106)](_0x47008a(0x120))[_0x47008a(0x114)]='',document['querySelector'](_0x47008a(0x104))[_0x47008a(0x114)]='',document[_0x47008a(0x106)]('#Post_Tags')[_0x47008a(0x114)]='',document[_0x47008a(0x106)](_0x47008a(0xbc))['value']='',document[_0x47008a(0x106)](_0x47008a(0xee))[_0x47008a(0x114)]='',document[_0x47008a(0x106)](_0x47008a(0x117))[_0x47008a(0x114)]='',document[_0x47008a(0x106)](_0x47008a(0xf2))[_0x47008a(0x114)]='',document[_0x47008a(0x106)]('#Post_Content2')[_0x47008a(0x114)]='',document['querySelector'](_0x47008a(0xb3))[_0x47008a(0x114)]='',document[_0x47008a(0x106)](_0x47008a(0x103))['value']=''),alert(_0x47ab00[_0x47008a(0xd2)]);});}function UpdateDataAsATSPost(_0x16b3f5,_0x543f37,_0x3c660c,_0x4890a0,_0x19d19a,_0x345604,_0x170e83,_0x4b6348,_0x603934,_0x4ef886,_0x52e48a,_0x6b9b25,_0x2ce792,_0x3216cc){var _0x299289=_0x2f98a2,_0x5d0c77=API_URL+(_0x299289(0x10e)+_0x16b3f5+_0x299289(0xe1)+_0x543f37+_0x299289(0xba)+_0x3c660c+'&dt3='+_0x4890a0+_0x299289(0x100)+_0x19d19a+_0x299289(0xea)+_0x345604+'&dt6='+_0x170e83+_0x299289(0x119)+_0x4b6348+_0x299289(0xef)+_0x603934+_0x299289(0x105)+_0x4ef886+_0x299289(0xec)+_0x52e48a+'&dt11='+_0x6b9b25+_0x299289(0xc1)+_0x2ce792+_0x299289(0xd0)+_0x3216cc);console[_0x299289(0x11a)](_0x299289(0xf5)+_0x5d0c77);if(_0x5d0c77[_0x299289(0xbf)]<0x7d0)fetch(_0x5d0c77)[_0x299289(0xc5)](_0x1f8505=>_0x1f8505[_0x299289(0xc4)]())[_0x299289(0xc5)](_0x260cdd=>{var _0x3c7595=_0x299289;console[_0x3c7595(0x11a)](_0x260cdd[_0x3c7595(0xd2)]);});else alert('Query\x20String\x20is\x20way\x20too\x20long.\x20-\x20'+_0x5d0c77[_0x299289(0xbf)]);}function _0x33bc(){var _0x53774e=['#Post_Title','#Post_Casts','324952PDndnp','none','#content_holder\x20.vid','#Post_Content3',').webp\x22></a>','SearchBox','865972Mzpafd','iframe','lbl_UnPublished','Video','&dt2=','innerText','#Post_VideoContent','534LYyJrv','forEach','length','<img\x20src=\x22CDN/thumb/','&dt12=','#content_holder\x20.article','toLowerCase','json','then','&dt3=','\x22\x20type=\x22video/mp4\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20Your\x20browser\x20does\x20not\x20support\x20the\x20video\x20tag.\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</video>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','replace','#content_holder\x20.story','4625352TVZaGV','&dt11=','</a>','#content_holder\x20.img','<h4>Cast-\x20</h4>','441rRKSrf','&dt13=','insertAdjacentHTML','Data','<div\x20class=\x22text-data\x22>',').webp\x22><img\x20src=\x22CDN/imgs/','post-type','children','<iframe\x20src=\x22','24TxCNRJ','https://script.google.com/macros/s/AKfycbyJTv_bUx45AbLjqhkC0qeqhCRsPOLhn2-eDUAWbuuiaCKXuHegc7h4n82hPwvXInpqtg/exec?','submitBTN','https','\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22displayFlexMiddle\x22>','afterbegin','#PostType','</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</a>','includes','&dt1=','.images-holder','.webp\x22>','<div\x20style=\x27text-align:center\x27><a','Article','location','&dt6=','ReloadData','addRowData=true&dt1=','&dt5=','#data1','&dt10=','search','#Post_Imagefolder','&dt8=','<div\x20class=\x22ads\x20long-ads\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<script\x20type=\x22text/javascript\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20atOptions\x20=\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x27key\x27\x20:\x20\x2764e4e1df395212a77b9282d1c95a4cb9\x27,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x27format\x27\x20:\x20\x27iframe\x27,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x27height\x27\x20:\x2090,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x27width\x27\x20:\x20728,\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x27params\x27\x20:\x20{}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20};\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20document.write(\x27<scr\x27\x20+\x20\x27ipt\x20type=\x22text/javascript\x22\x20src=\x22http\x27\x20+\x20(location.protocol\x20===\x20\x27https:\x27\x20?\x20\x27s\x27\x20:\x20\x27\x27)\x20+\x20\x27://www.profitabledisplaynetwork.com/64e4e1df395212a77b9282d1c95a4cb9/invoke.js\x22></scr\x27\x20+\x20\x27ipt>\x27);\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</script>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>','<h3\x20class=\x22headingTitles\x22>New\x20Photos</h3>','#Post_Content1','<h3\x20class=\x22headingTitles\x22>New\x20Videos</h3>','<img\x20src=\x22','Update\x20-\x20','38864LlnmOb','getRowData=true&code=','7892uAVPMg','No\x20Data\x20Found','3225930IiReVH','title','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<video\x20controlsList=\x22nodownload\x22\x20id=\x22directVid\x22\x20width=\x22100%\x22\x20height=\x22auto\x22\x20controls>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<source\x20src=\x22','get','viewPost=','<a\x20href=\x22\x22>','&dt4=','querySelectorAll','#data2','#Post_Content4','#Post_Production','&dt9=','querySelector','getElementById','<h3\x20class=\x22headingTitles\x22>Fun\x20Stories</h3>','.DBButtons','.content-holder','beforeend','532680BsJpbw','style','updateRowData=','<img\x20src=\x22include/plybutton.png\x22>','trim','getAttribute','split','<h3\x20class=\x22headingTitles\x22>Articles</h3>','value','Data\x20Inserted\x20Successfully','<br/>','#Post_ImageCount','beforebegin','&dt7=','log','#data3','<h4>Tags\x20-\x20</h4>','Save\x20-\x20','display'];_0x33bc=function(){return _0x53774e;};return _0x33bc();}function GetPostData(_0xf59f9f){var _0x11a03a=_0x2f98a2;fetch(API_URL+(_0x11a03a(0xf7)+_0xf59f9f))['then'](_0x542828=>_0x542828[_0x11a03a(0xc4)]())[_0x11a03a(0xc5)](_0x1607ea=>{var _0x753d1f=_0x11a03a;_0x1607ea[_0x753d1f(0xd2)][_0x753d1f(0xbf)]!=0xd&&(PostData=_0x1607ea[_0x753d1f(0xd2)],document['querySelector'](_0x753d1f(0x109))[_0x753d1f(0x10d)]['display']='flex');});}function LoadAds(){IndexPgHeading['forEach'](_0x39a30e=>{var _0x44319c=_0x1d30;_0x39a30e[_0x44319c(0xd1)]('beforebegin',_0x44319c(0xf0));});}
+var AllData = "";
+var saveButton = document.getElementById("submitBTN");
+var RefreshButton = document.getElementById("ReloadData");
+var SearchTxtBox = document.getElementById("SearchBox");
+var CheckModel;
+var CrossModel;
+var ModelNamesListSpan;
+var SelectedModelID = "";
+var CopyModelName;
+var IndexPgHeading;
+var LongAds;
+var Ads300x250;
+
+var VideoCount = 0, imageCount = 0, ArticleCount = 0, StoryCount = 0;
+
+var unpublishedLabel = document.getElementById("lbl_UnPublished");
+
+var API_URL = "https://script.google.com/macros/s/AKfycbyJTv_bUx45AbLjqhkC0qeqhCRsPOLhn2-eDUAWbuuiaCKXuHegc7h4n82hPwvXInpqtg/exec?";
+
+function InitialLoad()
+{
+    fetch(API_URL + `getFullData=true`)
+        .then(response => response.json())
+        .then(data => {
+            try {
+                if (data.Data.toLowerCase() == "No Data Found".toLowerCase()) {
+                }
+            } catch (error) {
+                AllData = Object.values(data.Data);
+                console.log(AllData);
+            }
+            LoadData(); // Loading Data at the begining
+        })
+}
+
+function LoadData() {
+    var dataTablevid = document.querySelector("#content_holder .vid");
+    var dataTableimg = document.querySelector("#content_holder .img");
+    var dataTablestory = document.querySelector("#content_holder .story");
+    var dataTablearticle = document.querySelector("#content_holder .article");
+    
+    if (AllData.length > 0) {
+
+        for (i = 0; i < AllData.length; i++) { 
+
+            var IndexPostLinks = "";
+            
+            IndexPostLinks = `
+            <a post-type="${AllData[i][1]}" href="Post.html?viewkey=${AllData[i][0]}">
+                <span class="displayFlexMiddle">`;
+            
+            
+            if (AllData[i][3].includes("https"))
+                IndexPostLinks += `<img src="${AllData[i][3]}">`;
+            else
+                IndexPostLinks += `<img src="CDN/thumb/${AllData[i][3]}.webp">`;
+                
+            IndexPostLinks += `
+                    <p>${AllData[i][2]}</p>
+                </span>
+            </a>`;
+
+            if (AllData[i][1] == "Video") {
+                VideoCount++;
+                dataTablevid.insertAdjacentHTML("beforeend", IndexPostLinks);
+            }
+                
+            
+            if (AllData[i][1] == "Image") {
+                imageCount++;
+                dataTableimg.insertAdjacentHTML("beforeend", IndexPostLinks);
+            }
+            
+            if (AllData[i][1] == "Article") {
+                ArticleCount++;
+                dataTablearticle.insertAdjacentHTML("beforeend", IndexPostLinks);
+            }
+
+            if (AllData[i][1] == "Story") {
+                StoryCount++;
+                dataTablestory.insertAdjacentHTML("beforeend", IndexPostLinks);
+            }
+        }
+        if (VideoCount > 0)
+            dataTablevid.insertAdjacentHTML("beforebegin", `<h3 class="headingTitles">New Videos</h3>`);
+
+        if (imageCount > 0)
+            dataTableimg.insertAdjacentHTML("beforebegin", `<h3 class="headingTitles">New Photos</h3>`);
+
+        if (ArticleCount > 0)
+            dataTablearticle.insertAdjacentHTML("beforebegin", `<h3 class="headingTitles">Articles</h3>`);
+
+        if (StoryCount > 0)
+            dataTablestory.insertAdjacentHTML("beforebegin", `<h3 class="headingTitles">Fun Stories</h3>`);
+        decidePostType();
+        
+        //Ads part Start
+        IndexPgHeading = document.querySelectorAll(".headingTitles");
+        Ads300x250 = document.querySelectorAll(".box-adds");
+        //Ads part End
+        LoadAds();
+    }
+}
+
+function decidePostType(){
+    var allThePostLinks = document.querySelectorAll("section .wrapper .content-holder a");
+    allThePostLinks.forEach(AnchorTaglinks => {
+        if (AnchorTaglinks.getAttribute("post-type") == "Video") {
+            AnchorTaglinks.children[0].insertAdjacentHTML("beforeend", `<img src="include/plybutton.png">`)
+        }
+    });
+}
+
+function loadPostData() {
+    const queryString = window.location.search;
+    const params = new URLSearchParams(queryString);
+    const PostIDKey = params.get('viewkey'); 
+
+    var PageTitle;
+    var PostCast;
+    var PostProduc;
+    var PostTag;
+    var PostVid;
+    var PostImage;
+    var PostImageCount;
+    var PostContent;
+
+    fetch(API_URL + `viewPost=${PostIDKey}&code=${PostIDKey}`)
+        .then(response => response.json())
+        .then(data => {
+            try {
+                if (data.Data.toLowerCase() == "No Data Found".toLowerCase()) {
+                }
+            } catch (error) {
+                AllData = Object.values(data.Data);
+                //console.log(AllData);
+                document.title = AllData[2] + " - Adult Time Saga";
+                        document.querySelector(".container .headingTitles").innerText = AllData[2];
+                        var TempArray;
+                        
+                        if (AllData[4] == "")
+                            document.querySelector("#data1").style.display = "none";
+                        else{
+                            TempArray = AllData[4].split(',');
+                            for (j = 0; j < TempArray.length; j++){
+                                document.querySelector("#data1").insertAdjacentHTML("beforeend", `<a href="">${TempArray[j].trim()}</a>`);
+                            }
+                            document.querySelector("#data1").insertAdjacentHTML("afterbegin", `<h4>Cast- </h4>`);
+                        }
+                        
+                        if (AllData[5] == "")
+                            document.querySelector("#data2").style.display = "none";
+                        else {
+                            TempArray = AllData[5].split(',');
+                            for (j = 0; j < TempArray.length; j++){
+                                document.querySelector("#data2").insertAdjacentHTML("beforeend", `<a href="">${TempArray[j].trim()}</a>`);
+                            }
+                            document.querySelector("#data2").insertAdjacentHTML("afterbegin", `<h4>Production - </h4>`);
+                        }
+                        
+                        
+                        if (AllData[6] == "")
+                            document.querySelector("#data3").style.display = "none";
+                        else { 
+                            TempArray = AllData[6].split(',');
+                            for (j = 0; j < TempArray.length; j++){
+                                document.querySelector("#data3").insertAdjacentHTML("beforeend", `<a href="">${TempArray[j].trim()}</a>`);
+                            }
+                            document.querySelector("#data3").insertAdjacentHTML("afterbegin", `<h4>Tags - </h4>`);
+                        }
+
+                        if (AllData[7] != "") {
+                            
+                            if (AllData[7].includes("iframe")) {
+                                document.querySelector(".content-holder").insertAdjacentHTML("afterbegin", `<iframe src="${AllData[7].replace("iframe","").trim()}" frameborder="0"></iframe>`);
+                            }
+                            else
+                                document.querySelector(".content-holder").insertAdjacentHTML("afterbegin", `
+                                <video controlsList="nodownload" id="directVid" width="100%" height="auto" controls>
+                                    <source src="${AllData[7]}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                `);
+                        }
+
+                        if (AllData[8] != "") {
+                            var imageName = AllData[8];
+                            var imageCount = AllData[9];
+                            const imageHolderTag = document.querySelector(".images-holder");
+                            for (i = 0; i < imageCount; i++) {
+                                imageHolderTag.insertAdjacentHTML("beforeend" , `<a data-fancybox="thumb" href="CDN/imgs/${imageName} (${(i+1)}).webp"><img src="CDN/imgs/${imageName} (${(i+1)}).webp"></a>`);
+                            }
+                        }
+                        
+                if (AllData[10] != "" || AllData[11] != "" || AllData[12] != "" || AllData[13] != "") {
+                    var textDataContent = "";
+                    if (AllData[10] != "")
+                        textDataContent += AllData[10];
+                    if (AllData[11] != "")
+                        textDataContent += "<br/>"+AllData[11];
+                    if (AllData[12] != "")
+                        textDataContent += "<br/>"+AllData[12];
+                    if (AllData[13] != "")
+                        textDataContent += "<br/>"+AllData[13];
+                    
+                    if (textDataContent.includes("<a")) {
+                        textDataContent = textDataContent.replace("<a", "<div style='text-align:center'><a");
+                        textDataContent = textDataContent.replace("</a>", "</div></a>");
+                    }
+                    textDataContent = `<div class="text-data">${textDataContent}</div>`;
+                    document.querySelector(".content-holder").insertAdjacentHTML("beforeend", textDataContent)
+                }
+            }
+        })
+}
+
+function SaveDataAsATSPost(data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12, data13) {
+    var queryString = API_URL + `addRowData=true&dt1=${data1}&dt2=${data2}&dt3=${data3}&dt4=${data4}&dt5=${data5}&dt6=${data6}&dt7=${data7}&dt8=${data8}&dt9=${data9}&dt10=${data10}&dt11=${data11}&dt12=${data12}&dt13=${data13}`;
+    console.log("Save - "+queryString);
+    if (queryString.length < 2000) {
+        fetch(queryString)
+        .then(response => response.json())
+            .then(data => {
+                if(data.Data.includes("Data Inserted Successfully")){
+                    document.querySelector("#PostType").value = "";
+                    document.querySelector("#Post_Title").value = "";
+                    document.querySelector("#Post_Thumbnail").value = "";
+                    document.querySelector("#Post_Casts").value = "";
+                    document.querySelector("#Post_Production").value = "";
+                    document.querySelector("#Post_Tags").value = "";
+                    document.querySelector("#Post_VideoContent").value = "";
+                    document.querySelector("#Post_Imagefolder").value = "";
+                    document.querySelector("#Post_ImageCount").value = "";
+                    document.querySelector("#Post_Content1").value = "";
+                    document.querySelector("#Post_Content2").value = "";
+                    document.querySelector("#Post_Content3").value = "";
+                    document.querySelector("#Post_Content4").value = "";
+                }
+                alert(data.Data);
+        })    
+    }
+
+    //<a target='_blank' href='https://www.locoloader.com/?url=https%3A%2F%2Fspankbang.com%2F81nyt%2Fvideo%2F'>Click here to Download</a>
+}
+
+function UpdateDataAsATSPost(code, data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, data11, data12, data13) {
+    var queryString = API_URL + `updateRowData=${code}&dt1=${data1}&dt2=${data2}&dt3=${data3}&dt4=${data4}&dt5=${data5}&dt6=${data6}&dt7=${data7}&dt8=${data8}&dt9=${data9}&dt10=${data10}&dt11=${data11}&dt12=${data12}&dt13=${data13}`;
+    console.log("Update - "+queryString);
+    if (queryString.length < 2000) {
+        fetch(queryString)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.Data);
+            })
+    }
+    else
+        alert("Query String is way too long. - " + queryString.length);
+}
+
+function GetPostData(PostCode) {
+    fetch(API_URL + `getRowData=true&code=${PostCode}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.Data.length != 13) {
+                PostData = data.Data;
+                document.querySelector(".DBButtons").style.display = "flex";
+            }
+        })
+}
+
+function LoadAds() {
+    IndexPgHeading.forEach(headTitles => {
+        headTitles.insertAdjacentHTML("beforebegin", `<div class="ads long-ads">
+        <script type="text/javascript">
+        atOptions = {
+            'key' : '64e4e1df395212a77b9282d1c95a4cb9',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+        document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.profitabledisplaynetwork.com/64e4e1df395212a77b9282d1c95a4cb9/invoke.js"></scr' + 'ipt>');
+    </script>
+        </div>`);
+    });
+}

@@ -30,6 +30,7 @@ a{
     color: var(--textcolor);
     margin-left: 5vw;
     margin-top: 5vh;
+    width: 100%;
 }
 header{
     background-color: var(--color1);
@@ -95,12 +96,11 @@ section .wrapper .content-holder a span{
     align-items: center;
 }
 section .wrapper .content-holder{
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap; */
     padding: 25px 0;
     color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 section .wrapper .content-holder .text-data p{
     margin-bottom: 15px;

@@ -40,21 +40,28 @@ header a img{
     height: 80px;
     width: 80px;
     border-radius: 50%;
+    margin: 15px;
 }
 .ads{
-    border: 2px dotted;
+    /* border: 2px dotted; */
+    text-align: center;
     border-radius: 5px;
     margin: 5px;
 }
 .long-ads{
-    height: 100px;
-    width: 740px;
+    /* height: 100px;
+    width: 740px; */
+    width: 100%;
 }
 .box-adds{
-    height: 260px;
-    width: 310px;
+    /* height: 260px;
+    width: 310px; */
+    width: 100%;
 }
-
+.box-adds.fixed{
+    position: fixed;
+    top: 23px;
+}
 section{
     background-color: var(--color1);
     flex-direction: column;
@@ -171,12 +178,11 @@ button{
     color: #fff;
     font-weight: bolder;
 }
-section .wrapper .content-holder iframe{
+section .wrapper .content-holder iframe.vidIframe{
     width:100%;
     height:480px;
 }
 section .wrapper .content-holder video{
-    border: 3px solid #ffd700a3;
     border-radius: 15px;
     margin-right: 10px;
     width: 100%;
@@ -213,11 +219,14 @@ section .wrapper .images-holder img {
     height: auto !important;
     border-radius: 10px;
 }
-
+section .wrapper span.sideB{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
 section .wrapper .Sidebar{
     justify-content: center;
     display: flex;
-    flex: 1;
 }
 footer {
     padding: 15px;
@@ -241,8 +250,14 @@ footer {
 */
 
 @media (max-width:920px){
+    html{
+        overflow-x: hidden;
+    }
     .long-ads{
-        width: 90%;
+        width: 95%;
+    }
+    .long-ads iframe{
+        width: 100%;
     }
     header{
         flex-direction: column;

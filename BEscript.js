@@ -10,6 +10,7 @@ var CopyModelName;
 var IndexPgHeading;
 var LongAds;
 var Ads300x250;
+var TempArray;
 
 var VideoCount = 0, imageCount = 0, ArticleCount = 0, StoryCount = 0;
 
@@ -38,49 +39,66 @@ function LoadData() {
     var dataTableimg = document.querySelector("#content_holder .img");
     var dataTablestory = document.querySelector("#content_holder .story");
     var dataTablearticle = document.querySelector("#content_holder .article");
+
+    
+    for (i = 0; i < AllData.length; i++) {
+        if (AllData[i][1] == "Video") VideoCount++;
+        if (AllData[i][1] == "Image") imageCount++;
+        if (AllData[i][1] == "Article") ArticleCount++;
+        if (AllData[i][1] == "Story") StoryCount++;
+    }
+    var MAXVideoCount = VideoCount;
+    var MAXimageCount = imageCount;
+    var MAXArticleCount = ArticleCount;
+    var MAXStoryCount = StoryCount;
+    TempArray = AllData;
+    
+    var TVideoCount = 0;
+    var TimageCount = 0;
+    var TArticleCount = 0;
+    var TStoryCount = 0;
     
     if (AllData.length > 0) {
-
-        for (i = 0; i < AllData.length; i++) { 
+        while (TempArray.length != 0) {
+            var randSelected = Math.floor(Math.random() * (0 - TempArray.length) + TempArray.length);
+            //console.log(TempArray[randSelected]);
 
             var IndexPostLinks = "";
             
             IndexPostLinks = `
-            <a post-type="${AllData[i][1]}" href="Post.html?viewkey=${AllData[i][0]}">
+            <a post-type="${TempArray[randSelected][1]}" href="Post.html?viewkey=${TempArray[randSelected][0]}">
                 <span class="displayFlexMiddle">`;
             
             
-            if (AllData[i][3].includes("https"))
-                IndexPostLinks += `<img src="${AllData[i][3]}">`;
+            if (TempArray[randSelected][3].includes("https"))
+                IndexPostLinks += `<img src="${TempArray[randSelected][3]}">`;
             else
-                IndexPostLinks += `<img src="CDN/thumb/${AllData[i][3]}.webp">`;
+                IndexPostLinks += `<img src="CDN/thumb/${TempArray[randSelected][3]}.webp">`;
                 
             IndexPostLinks += `
-                    <p>${AllData[i][2]}</p>
+                    <p>${TempArray[randSelected][2]}</p>
                 </span>
             </a>`;
 
-            if (AllData[i][1] == "Video") {
-                VideoCount++;
+            if (TempArray[randSelected][1] == "Video" && TVideoCount <= MAXVideoCount) {
                 dataTablevid.insertAdjacentHTML("beforeend", IndexPostLinks);
             }
-                
             
-            if (AllData[i][1] == "Image") {
-                imageCount++;
+            if (TempArray[randSelected][1] == "Image" && TimageCount <= MAXimageCount) {
                 dataTableimg.insertAdjacentHTML("beforeend", IndexPostLinks);
             }
             
-            if (AllData[i][1] == "Article") {
-                ArticleCount++;
+            if (TempArray[randSelected][1] == "Article" && TArticleCount <= MAXArticleCount) {
                 dataTablearticle.insertAdjacentHTML("beforeend", IndexPostLinks);
             }
 
-            if (AllData[i][1] == "Story") {
-                StoryCount++;
+            if (TempArray[randSelected][1] == "Story" && TStoryCount <= MAXStoryCount) {
                 dataTablestory.insertAdjacentHTML("beforeend", IndexPostLinks);
             }
+
+            TempArray.splice(randSelected, 1);
         }
+
         if (VideoCount > 0)
             dataTablevid.insertAdjacentHTML("beforebegin", `<h3 class="headingTitles">New Videos</h3>`);
 
@@ -93,13 +111,22 @@ function LoadData() {
         if (StoryCount > 0)
             dataTablestory.insertAdjacentHTML("beforebegin", `<h3 class="headingTitles">Fun Stories</h3>`);
         decidePostType();
-        
-        //Ads part Start
-        IndexPgHeading = document.querySelectorAll(".headingTitles");
-        Ads300x250 = document.querySelectorAll(".box-adds");
-        //Ads part End
-        LoadAds();
     }
+    
+    // if (AllData.length > 0) {
+
+    //     for (i = 0; i < AllData.length; i++) { 
+
+            
+    //     }
+        
+        
+    //     //Ads part Start
+    //     //IndexPgHeading = document.querySelectorAll(".headingTitles");
+    //     //Ads300x250 = document.querySelectorAll(".box-adds");
+    //     //Ads part End
+    //     //LoadAds();
+    // }
 }
 
 function decidePostType(){
@@ -172,7 +199,7 @@ function loadPostData() {
                         if (AllData[7] != "") {
                             
                             if (AllData[7].includes("iframe")) {
-                                document.querySelector(".content-holder").insertAdjacentHTML("afterbegin", `<iframe src="${AllData[7].replace("iframe","").trim()}" frameborder="0"></iframe>`);
+                                document.querySelector(".content-holder").insertAdjacentHTML("afterbegin", `<iframe class='vidIframe' src="${AllData[7].replace("iframe","").trim()}" frameborder="0"></iframe>`);
                             }
                             else
                                 document.querySelector(".content-holder").insertAdjacentHTML("afterbegin", `
@@ -269,6 +296,19 @@ function GetPostData(PostCode) {
 }
 
 function LoadAds() {
+    // LongAds = document.querySelectorAll(".long-ads");
+    // LongAds.forEach(LongAdsDiv => {
+    //     LongAdsDiv.insertAdjacentHTML("afterbegin", `<script type="text/javascript">
+    //     atOptions = {
+    //         'key' : '64e4e1df395212a77b9282d1c95a4cb9',
+    //         'format' : 'iframe',
+    //         'height' : 90,
+    //         'width' : 728,
+    //         'params' : {}
+    //     };
+    //     document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.profitabledisplaynetwork.com/64e4e1df395212a77b9282d1c95a4cb9/invoke.js"></scr' + 'ipt>');
+    // </script>`);
+    // });
     IndexPgHeading.forEach(headTitles => {
         headTitles.insertAdjacentHTML("beforebegin", `<div class="ads long-ads">
         <script type="text/javascript">

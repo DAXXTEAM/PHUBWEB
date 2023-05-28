@@ -1,10 +1,14 @@
 //const myDiv = document.querySelector('.box-adds');
 
-// document.addEventListener('scroll', function () {
-//     console.log(document.querySelector('.box-adds').getBoundingClientRect());
-//     //mybutton = document.getElementById("BackToTop");
-
-// })
+document.addEventListener('scroll', function () {
+    console.log(document.querySelector('.box-adds').getBoundingClientRect().y);
+    //mybutton = document.getElementById("BackToTop");
+    if (document.querySelector('.box-adds').getBoundingClientRect().y < 30) 
+        document.querySelector('.box-adds').classList.add("fixed");
+    
+    if(document.querySelector('.sideB').getBoundingClientRect().y > 200)
+        document.querySelector('.box-adds').classList.remove("fixed");
+})
 
 
 function includeHTML() {

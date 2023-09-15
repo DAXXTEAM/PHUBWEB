@@ -55,8 +55,8 @@ header a img{
 }
 .box-adds{
     /* height: 260px;
-    width: 310px; */
-    width: 100%;
+    width: 310px; 
+    width: 100%;*/
 }
 .box-adds.fixed{
     position: fixed;
